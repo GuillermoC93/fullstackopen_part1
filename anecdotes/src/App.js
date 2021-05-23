@@ -29,12 +29,18 @@ const App = () => {
     return Math.floor(Math.random() * max);
   }
 
+  console.log(Math.max(...allVotes))
+
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       {anecdotes[selected]}
       <p>has {allVotes[selected]} votes</p>
       <Button handleClick={updateVote} text="vote" />
       <Button handleClick={() => setSelected(getRandomInt(6))} text="next anecdote" />
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[allVotes.indexOf(Math.max(...allVotes))]}
+      <p>has {Math.max(...allVotes)} votes</p>
     </div>
   )
 }

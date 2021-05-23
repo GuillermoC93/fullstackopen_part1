@@ -29,8 +29,6 @@ const App = () => {
     return Math.floor(Math.random() * max);
   }
 
-  console.log(Math.max(...allVotes))
-
   return (
     <div>
       <h1>Anecdote of the day</h1>
